@@ -1,17 +1,17 @@
 import logging
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-# formatter = logging.Formatter('%(name)s:%(message)s')
+formatter = logging.Formatter(
+    '%(levelname)s - %(asctime)s -  %(message)s')
 
 file_handler = logging.FileHandler('password_checker/error.log')
 file_handler.setLevel(logging.ERROR)
-# file_handler.setFormatter(formatter)
-
+file_handler.setFormatter(formatter)
 
 stream_handler = logging.StreamHandler()
-# stream_handler.setFormatter(formatter)
+stream_handler.setFormatter(formatter)
 
 
 logger.addHandler(file_handler)
@@ -107,8 +107,7 @@ class Password:
 
 if __name__ == '__main__':
 
-    # password = "a2Maddsa%"
-    password = "a2Madds%"
+    password = "a2Madsad"
 
     try:
         if (Password(password).password_is_ok() == True):
