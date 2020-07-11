@@ -1,3 +1,6 @@
 __pycache__/
 .pytest_cache/
-*.egg-info/
+password_checker.egg-info/
+password_checker/error.log
+tests/__pycache__/
+password_checker/__pycache__/
