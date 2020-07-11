@@ -1,5 +1,0 @@
-setup.py
-password_checker.egg-info/PKG-INFO
-password_checker.egg-info/SOURCES.txt
-password_checker.egg-info/dependency_links.txt
-password_checker.egg-info/top_level.txt
