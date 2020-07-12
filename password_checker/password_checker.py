@@ -6,7 +6,7 @@ logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(asctime)s -  %(message)s')
 
-file_handler = logging.FileHandler('password_checker/error.log')
+file_handler = logging.FileHandler('error.log')
 file_handler.setLevel(logging.ERROR)
 file_handler.setFormatter(formatter)
 
@@ -67,47 +67,26 @@ class Password:
             return True
 
     def password_is_ok(self):
-        pass_gauge = 0
-
+        pass_gauge = 0         
         if self.password_exist() == True:
             pass_gauge += 1
-        else:
-            return False
-
         if self.password_length() == True:
             pass_gauge += 1
-        else:
-            return False
-
         if self.password_digit() == True:
             pass_gauge += 1
-        else:
-            return False
-
         if self.password_lowercase() == True:
             pass_gauge += 1
-        else:
-            return False
-
         if self.password_uppercase() == True:
             pass_gauge += 1
-        else:
-            return False
-
         if self.password_special_character() == True:
             pass_gauge += 1
-        else:
-            return False
-
         if pass_gauge > 3:
             return True
-        else:
-            logger.debug("User password is not ok")
 
 
 if __name__ == '__main__':
 
-    password = "a2Madsad"
+    password = "fsgjdgD<%4"
 
     try:
         if (Password(password).password_is_ok() == True):
