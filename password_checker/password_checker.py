@@ -1,25 +1,5 @@
-import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter(
-    '%(levelname)s - %(asctime)s -  %(message)s')
-
-file_handler = logging.FileHandler('error.log')
-file_handler.setLevel(logging.ERROR)
-file_handler.setFormatter(formatter)
-
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
-
-
-logger.addHandler(file_handler)
-logger.addHandler(stream_handler)
-
-
 class Password:
-
+    
     def __init__(self, password):
         self.password = password
 
@@ -90,8 +70,8 @@ if __name__ == '__main__':
 
     try:
         if (Password(password).password_is_ok() == True):
-            logger.debug("User password is ok")
+            print("User password is ok")
         else:
-            logger.debug("User password is not ok")
+            print("User password is not ok")
     except (NameError, ValueError) as error:
-        logger.error(error)
+        print(error)
