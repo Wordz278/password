@@ -1,9 +1,6 @@
 __pycache__/
-error.log
 .vscode/
 .pytest_cache/
 password_checker.egg-info/
-password_checker/error.log
 password_checker/__pycache__/
 tests/__pycache__/
-tests/error.log
